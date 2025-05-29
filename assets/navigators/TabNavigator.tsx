@@ -3,7 +3,7 @@ import { View, StyleSheet, Animated, Easing } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from '../screens/HomeScreen';
 import SearchScreen from '../screens/SearchScreen';
-import UserAccountScreen from '../screens/UserAccounScreen';
+import UserAccountScreen from '../screens/UserAccountScreen';
 import MyTicketScreen from '../screens/MyTicketScreen';
 import { FONTSIZE, SPACING } from '../../assets/theme/theme';
 import CustomIcon from '../components/CustomIcon';

@@ -1,33 +1,49 @@
-import { COLORS, FONTFAMILY, FONTSIZE, SPACING } from '../../assets/theme/theme';
+import { COLORS, FONTFAMILY, FONTSIZE, SPACING} from '../../assets/theme/theme';
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import CustomIcon from './CustomIcon';
+import { View, Text, StyleSheet,TouchableOpacity } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
+
 
 interface SettingComponentProps {
   icon: string;
   heading: string;
   subheading: string;
-  subtitle: string;
+  subtitle?: string;
+  onPress?: () => void; 
+  rightElement?: React.ReactNode; 
 }
 
-const SettingComponent: React.FC<SettingComponentProps> = ({ icon, heading, subheading, subtitle }) => {
+const SettingComponent: React.FC<SettingComponentProps> = ({ 
+  icon, 
+  heading, 
+  subheading, 
+  subtitle,
+  onPress,
+  rightElement // New prop for custom right elements
+}) => {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity 
+      style={styles.container} 
+      onPress={onPress}
+      activeOpacity={0.7}
+    >
       {/* Left Icon */}
-      <CustomIcon name={icon} style={styles.iconStyle} />
+      <Icon name={icon} style={styles.iconStyle} />
 
       {/* Text Section */}
       <View style={styles.textContainer}>
         <Text style={styles.title}>{heading}</Text>
         <View style={styles.subtitleContainer}>
           <Text style={styles.subtitle}>{subheading}</Text>
-          <Text style={styles.subtitle}>• {subtitle}</Text> 
+          {subtitle && (  // Only render if subtitle exists
+            <Text style={styles.subtitle}>• {subtitle}</Text> 
+          )}
         </View>
       </View>
 
-      {/* Right Arrow Icon */}
-      <CustomIcon name="arrow-right" style={styles.arrowIcon} />
-    </View>
+      {/* Right Side - Either custom element or arrow */}
+      {rightElement}
+    </TouchableOpacity>
   );
 };
 
@@ -41,7 +57,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: SPACING.space_20,
     backgroundColor: COLORS.White,
     borderRadius: 10,
-    elevation: 2, // Shadow for Android
+    elevation: 2,
     shadowColor: COLORS.Black,
     shadowOffset: { width: 0, height: 1 },
     shadowOpacity: 0.1,

@@ -23,30 +23,46 @@ const eventsData: Record<string, EventType> = {
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHfcvPnqFpi1LEBGzx74mQYPgCRkWcgpqyKt7hUk-S_zf0emjqd0dztfYWbtuiyxjZnug&usqp=CAU',
   },
   '2': {
+    name: 'Rudraksh Fest 2025',
+    date: 'May 10, 2025',
+    time: '10:00 AM',
+    venue: 'Main Auditorium',
+    description: '"Get ready for a colorful celebration at HNBGU’s grand cultural event filled with music, dance, drama, fashion, and endless fun! ',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIPhT0ngJa-YBhjTZGF2KKVmSNNMo8_0sqMQ&s',
+  },
+  '3': {
     name: 'Tech Fest 2025',
     date: 'May 15, 2025',
     time: '11:00 AM',
     venue: 'Engineering Block',
     description: 'A festival dedicated to technology and innovation, featuring workshops, hackathons, and tech talks.',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6KxY1vZc3z8jJmXkF4y0n7gk6OaWvX1b8rQ&usqp=CAU',
+    image: 'https://www.networksplus.com/sites/default/files/styles/slideshow/public/2025-01/Screenshot%202025-01-27%20at%2010.44.57%E2%80%AFAM.png?itok=6Aw2OiSC',
   },
-  '3': {
+  '4': {
     name: 'Cultural Night 2025',
     date: 'June 20, 2025',
     time: '7:00 PM',
     venue: 'Open Air Theatre',
     description: 'An evening of cultural performances, including dance, music, and drama by students.',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6KxY1vZc3z8jJmXkF4y0n7gk6OaWvX1b8rQ&usqp=CAU',
+    image: 'https://i.ytimg.com/vi/W2g2wr7WXTk/maxresdefault.jpg',
   },
-  '4': {
+  '5': {
+    name: 'Budhi Kaaki Aur Chori',
+    date: '4 April, 2025',
+    time: '5:45 PM',
+    venue: 'Mini Auditorium',
+    description: '" Lights. Drama. Action ! "',
+    image: 'https://media-hosting.imagekit.io/0c0188d1ca624d1a/play.png?Expires=1839604552&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=AOxaif5OaDqbQKTSVrecZjbYUGeVkRdeHfmosUQI1mh0huWpqn8FR4FbBQ6~kwV8vU71poW0KBwcDq4oy8iqSfi~6o7nHU2W1THOMh4xzWCnAakQ66bHAho4zzQhXyiDMn8ODHjWR~FTJOxTfLZPjCPMklfdAxrWXs-MuJAwtI--a2fwx53CFMOwicserol~TV~gN~b7PkXReUB5VIwW9PakUS5J31KwziC-9hs92u3kgjPqsHsnv2I3fgCeVpAVDqsv~ZDI~w12c79xBzYBDhQJzqyX3hncXhFFN995PeRiPF~KmFLjciniCJFlHbWVw8KHRKVBbm-XD7kIfZX1oA__',
+  },
+  '6': {
     name: 'Sports Day 2025',
     date: 'July 10, 2025',
     time: '9:00 AM',
     venue: 'University Ground',
     description: 'A day filled with sports competitions and activities for students to showcase their athletic skills.',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6KxY1vZc3z8jJmXkF4y0n7gk6OaWvX1b8rQ&usqp=CAU',
+    image: 'https://www.hnbgu.ac.in/sites/default/files/2023-02/IMG_7695.JPG',
   },
-  '5': {
+  '7': {
     name: 'Art and Craft Exhibition 2025',
     date: 'August 5, 2025',
     time: '10:00 AM',
@@ -54,7 +70,7 @@ const eventsData: Record<string, EventType> = {
     description: 'An exhibition showcasing the artistic talents of students, featuring paintings, sculptures, and crafts.',
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6KxY1vZc3z8jJmXkF4y0n7gk6OaWvX1b8rQ&usqp=CAU',
   },
-  '6': {
+  '8': {
     name: 'Literary Fest 2025',
     date: 'September 15, 2025',
     time: '11:00 AM',
@@ -62,7 +78,7 @@ const eventsData: Record<string, EventType> = {
     description: 'A celebration of literature with book readings, poetry slams, and author interactions.',
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6KxY1vZc3z8jJmXkF4y0n7gk6OaWvX1b8rQ&usqp=CAU',
   },
-  '7': {
+  '9': {
     name: 'Science Fair 2025',
     date: 'October 20, 2025',
     time: '10:00 AM',
@@ -221,7 +237,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     position: 'absolute',
-    top: 50,
+    top: 45,
     left: 20,
     zIndex: 10,
     backgroundColor: 'rgba(0,0,0,0.2)',
@@ -237,7 +253,7 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     marginTop: 100,
-    marginHorizontal: 20,
+    marginHorizontal: 25,
     borderRadius: 20,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 10 },
@@ -248,7 +264,7 @@ const styles = StyleSheet.create({
   },
   eventImage: {
     width: '100%',
-    height: 220,
+    height: 255,
     borderRadius: 20,
   },
   eventDetails: {
@@ -265,7 +281,7 @@ const styles = StyleSheet.create({
     marginBottom: 30,
   },
   eventTitle: {
-    fontSize: 28,
+    fontSize: 30,
     fontWeight: 'bold',
     color: '#333',
     marginBottom: 15,
@@ -335,7 +351,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   bookButtonText: {
-    fontSize: 18,
+    fontSize: 20,
     color: '#FFFFFF',
     fontWeight: 'bold',
     fontFamily: 'Roboto',

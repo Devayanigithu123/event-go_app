@@ -4,14 +4,14 @@ import TabNavigator from './TabNavigator';
 import HomeScreen from '../screens/HomeScreen';
 import SearchScreen from '../screens/SearchScreen';
 import MyTicketsScreen from '../screens/MyTicketScreen';
-import UserAccountScreen from '../screens/UserAccounScreen';
+import UserAccountScreen from '../screens/UserAccountScreen';
 import EventDetailsScreen from '../screens/EventDetailsScreen';
 import QRScannerScreen from '../screens/QRScannerScreen';
 import AdminPanel from '../screens/AdminPanel';
 
 
 export type RootStackParamList = {
-  Tab: undefined; // No params for Tab Navigator
+  Tab: undefined; 
   Home: undefined;
   QRScanner: undefined;
   Search: undefined;

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { View, Text, StyleSheet, Alert, ActivityIndicator, PermissionsAndroid } from 'react-native';
+import { View, Text, StyleSheet, Alert, ActivityIndicator, PermissionsAndroid, Linking} from 'react-native';
 import QRCodeScanner, { RNQRCodeScannerProps }  from 'react-native-qrcode-scanner';
 import { RNCamera } from 'react-native-camera';
 import axios, { AxiosError, AxiosResponse } from 'axios';
@@ -44,7 +44,22 @@ const QrScannerScreen = () => {
             buttonPositive: "OK"
           }
         );
-        setHasPermission(granted === PermissionsAndroid.RESULTS.GRANTED);
+        
+        if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+          setHasPermission(true);
+        } else if (granted === PermissionsAndroid.RESULTS.DENIED) {
+          Alert.alert("Permission denied");
+        } else {
+          // RESULTS.NEVER_ASK_AGAIN
+          Alert.alert(
+            "Permission permanently denied",
+            "Go to app settings to enable camera permission",
+            [
+              { text: "Cancel", style: "cancel" },
+              { text: "Open Settings", onPress: () => Linking.openSettings() }
+            ]
+          );
+        }
       } catch (err) {
         console.warn(err);
         setHasPermission(false);

@@ -4,7 +4,7 @@ import CustomIcon from './CustomIcon'; // Assuming you're using a custom icon co
 import { COLORS, FONTFAMILY, FONTSIZE, SPACING } from '../theme/theme';
 
 interface AppHeaderProps {
-  name: string; // Icon name (e.g., "close")
+  name: string; // Icon name 
   header: string; // Header title
   action: () => void; // Function to execute on press
 }
