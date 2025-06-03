@@ -1,7 +1,7 @@
-module.exports={
-    project:{
-        ios:{},
-        android:{}
+module.exports = {
+    project: {
+        ios: {},
+        android: {}
     },
-    assets:['./assets/assets','./node_modules/react-native-vector-icons/Fonts'],
+    assets: [ './assets/fonts', './assets/images', './node_modules/react-native-vector-icons/Fonts' ],
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, Animated, Easing } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HomeScreen from '../screens/HomeScreen';
+import HomeScreen from '../screens/HomeScreenNew';
 import SearchScreen from '../screens/SearchScreen';
 import UserAccountScreen from '../screens/UserAccountScreen';
 import MyTicketScreen from '../screens/MyTicketScreen';
@@ -22,61 +22,61 @@ const TabNavigator = () => {
           borderTopWidth: 0,
           elevation: 0,
           shadowOpacity: 0,
-          position:'absolute',
+          position: 'absolute',
         }
       }}
     >
-      <Tab.Screen 
-        name="Home" 
-        component={HomeScreen} 
+      <Tab.Screen
+        name="Home"
+        component={HomeScreen}
         options={{
           tabBarShowLabel: false,
           tabBarIcon: ({ focused }) => (
-            <TabBarIcon 
-              focused={focused} 
-              iconName="video" 
+            <TabBarIcon
+              focused={focused}
+              iconName="video"
               label="Home"
             />
           )
         }}
       />
-      <Tab.Screen 
-        name="Search" 
-        component={SearchScreen}  
+      <Tab.Screen
+        name="Search"
+        component={SearchScreen}
         options={{
           tabBarShowLabel: false,
           tabBarIcon: ({ focused }) => (
-            <TabBarIcon 
-              focused={focused} 
-              iconName="search" 
+            <TabBarIcon
+              focused={focused}
+              iconName="search"
               label="Search"
             />
           )
         }}
       />
-      <Tab.Screen 
-        name="MyTickets" 
-        component={MyTicketScreen}  
+      <Tab.Screen
+        name="MyTickets"
+        component={MyTicketScreen}
         options={{
           tabBarShowLabel: false,
           tabBarIcon: ({ focused }) => (
-            <TabBarIcon 
-              focused={focused} 
-              iconName="ticket" 
+            <TabBarIcon
+              focused={focused}
+              iconName="ticket"
               label="Tickets"
             />
           )
-        }} 
+        }}
       />
-      <Tab.Screen 
-        name="User" 
-        component={UserAccountScreen}  
+      <Tab.Screen
+        name="User"
+        component={UserAccountScreen}
         options={{
           tabBarShowLabel: false,
           tabBarIcon: ({ focused }) => (
-            <TabBarIcon 
-              focused={focused} 
-              iconName="user" 
+            <TabBarIcon
+              focused={focused}
+              iconName="user"
               label="Profile"
             />
           )
@@ -97,7 +97,7 @@ const TabBarIcon = ({ focused, iconName, label }: { focused: boolean; iconName: 
       easing: Easing.ease,
       useNativeDriver: true,
     }).start();
-    
+
     Animated.timing(opacityValue, {
       toValue: focused ? 1 : 0.9,
       duration: 150,
@@ -112,9 +112,9 @@ const TabBarIcon = ({ focused, iconName, label }: { focused: boolean; iconName: 
         transform: [{ scale: scaleValue }],
         opacity: opacityValue,
       }}>
-        <CustomIcon 
-          name={iconName} 
-          color={focused ? '#FFA500' : '#888888'} 
+        <CustomIcon
+          name={iconName}
+          color={focused ? '#FFA500' : '#888888'}
           size={FONTSIZE.size_22}
         />
       </Animated.View>

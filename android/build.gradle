@@ -1,20 +1,26 @@
 buildscript {
     ext {
-        buildToolsVersion = "35.0.0"
-        minSdkVersion = 24
-        compileSdkVersion = 35
-        targetSdkVersion = 35
-        ndkVersion = "29.0.13113456"
-        kotlinVersion = "1.9.22" // Updated to a valid Kotlin version
+        buildToolsVersion = "34.0.0"
+        minSdkVersion = 21
+        compileSdkVersion = 33
+        targetSdkVersion = 33
+        ndkVersion = "25.1.8937393"
+        kotlinVersion = "1.8.0"
     }
     repositories {
         google()
         mavenCentral()
+        maven {
+            url("$rootDir/../node_modules/react-native/android") // Ensure RN local path is included
+        }
+        maven {
+            url("https://www.jitpack.io") // Additional Maven repository
+        }
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:8.8.0") // Added AGP version
-        classpath("com.facebook.react:react-native-gradle-plugin:0.74.2") // Added React Native Gradle Plugin version
+        classpath("com.android.tools.build:gradle:7.4.2") // Keep Gradle plugin version aligned with Gradle wrapper
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
+        classpath("com.facebook.react:react-native-gradle-plugin:0.71.19") // Explicit version for RN Gradle plugin
     }
 }
 
@@ -23,12 +29,10 @@ allprojects {
         google()
         mavenCentral()
         maven {
-            url("$rootDir/../node_modules/react-native/android")
+            url("$rootDir/../node_modules/react-native/android") // React Native local repo
         }
-        maven { url "$rootDir/../node_modules/react-native-camera/android/libs" }
-        maven { url "https://jitpack.io" }
         maven {
-            url("$rootDir/../node_modules/jsc-android/dist")
+            url("https://www.jitpack.io")
         }
     }
 }

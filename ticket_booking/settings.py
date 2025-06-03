@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'bookings',  # Your apps, Added this line
+    'backend',  # Your apps, Added this line
     # Django REST Framework
     'rest_framework',
 ]
@@ -52,7 +52,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'ticket_booking.urls'
+ROOT_URLCONF = 'backend.urls'
 
 TEMPLATES = [
     {
@@ -78,8 +78,12 @@ WSGI_APPLICATION = 'ticket_booking.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'University_ticket_managnment',
+        'USER': 'root',
+        'PASSWORD': 'Sakshi@789',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
